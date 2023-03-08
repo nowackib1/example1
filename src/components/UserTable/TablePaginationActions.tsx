@@ -17,6 +17,7 @@ import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import LastPageIcon from '@mui/icons-material/LastPage';
 import { useEffect, useState } from 'react';
 import { getAllUsers } from '../Serwis/TableService';
+import User1 from './User1';
 
 
 type User = {
@@ -142,17 +143,14 @@ export default function CustomPaginationActionsTable() {
             ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
             : rows
           ).map((row) => (
-            <TableRow key={row.id}>
-              <TableCell component="th" scope="row">
-                {row.username}
-              </TableCell>
-              <TableCell>
-                {row.email}
-              </TableCell>
-              <TableCell>
-                {row.action}
-              </TableCell>
-            </TableRow>
+
+            <User1
+            key={row.id} 
+            id={row.id}
+            username={row.username}
+            email={row.email}
+            action={row.action}/>
+            
           ))}
           {emptyRows > 0 && (
             <TableRow style={{ height: 53 * emptyRows }}>
