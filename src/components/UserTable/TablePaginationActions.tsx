@@ -18,6 +18,7 @@ import LastPageIcon from '@mui/icons-material/LastPage';
 import { useEffect, useState } from 'react';
 import { getAllUsers } from '../Serwis/TableService';
 import User1 from './User1';
+import { SearchBar } from '../SearchBar/SearchBar';
 
 
 type User = {
@@ -128,6 +129,8 @@ export default function CustomPaginationActionsTable() {
   };
 
   return (
+    <>
+    <SearchBar users={rows}/>
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
       <TableHead>
@@ -183,5 +186,6 @@ export default function CustomPaginationActionsTable() {
         </TableFooter>
       </Table>
     </TableContainer>
+    </>
   );
 }
