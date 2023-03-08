@@ -130,7 +130,8 @@ export default function CustomPaginationActionsTable() {
 
   return (
     <>
-    <SearchBar users={rows}/>
+    {/* <SearchBar rows={rows} setRows={setRows}/> */}
+    <SearchBar rows={rows}/>
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
       <TableHead>
