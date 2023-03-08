@@ -15,6 +15,8 @@ import FirstPageIcon from '@mui/icons-material/FirstPage';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import LastPageIcon from '@mui/icons-material/LastPage';
+import { useEffect, useState } from 'react';
+import { getAllUsers } from '../Serwis/TableService';
 
 
 type User = {
@@ -41,7 +43,6 @@ function TablePaginationActions(props: TablePaginationActionsProps) {
   const { count, page, rowsPerPage, onPageChange } = props;
 
 
-  
   const handleFirstPageButtonClick = (
     event: React.MouseEvent<HTMLButtonElement>,
   ) => {
@@ -94,38 +95,18 @@ function TablePaginationActions(props: TablePaginationActionsProps) {
   );
 }
 
-function createData(username: string, email: string, action: string, id: number) {
-  return { username, email, action, id };
-}
 
-const rows = [
-  createData('Anna vhjbjjhowalska', "akowalczyk@op.pl", "akcja", 1),
-  createData('Anna Kowalska', "akowalczyk@op.pl", "akcja", 2),
-  createData('Bartek Kowalska', "akowalczyk@op.pl", "akcja", 3),
-  createData('Anna Kowalska', "akowalczyk@op.pl", "akcja",4),
-  createData('Anna Kowalska', "akowalczyk@op.pl", "akcja",5),
-  createData('Anna Kowalska', "akowalczyk@op.pl", "akcja",6),
-  createData('Anna Kowalska', "akowalczyk@op.pl", "akcja",7),
-  createData('Anna Kowalska', "akowalczyk@op.pl", "akcja",8),
-  createData('Anna Kowalska', "akowalczyk@op.pl", "akcja",9),
-  createData('Anna Kowalska', "akowalczyk@op.pl", "akcja",10),
-  createData('Anna Kowalska', "akowalczyk@op.pl", "akcja",11),
-  createData('Anna Kowalska', "akowalczyk@op.pl", "akcja",12),
-  createData('Anna Kowalska', "akowalczyk@op.pl", "akcja",13),
-  createData('Anna Kowalska', "akowalczyk@op.pl", "akcja",14),
-  createData('Anna Kowalska', "akowalczyk@op.pl", "akcja",15),
-  createData('Bartek Kowalska', "akowalczyk@op.pl", "akcja",16),
-  createData('Anna Kowalska', "akowalczyk@op.pl", "akcja",17),
-  createData('Anna Kowalska', "akowalczyk@op.pl", "akcja",18),
-  createData('Anna Kowalska', "akowalczyk@op.pl", "akcja",19),
-  createData('Anna Kowalska', "akowalczyk@op.pl", "akcja",20),
-  
-]
-
-console.log(rows)
 export default function CustomPaginationActionsTable() {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const [rows, setRows] = useState<User[]>([]);
+
+  useEffect(() => {
+    const fetchData = async (): Promise<void> => {
+      const data = await getAllUsers().then(el=>setRows(el));
+    };
+    fetchData();
+  }, []);
 
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
