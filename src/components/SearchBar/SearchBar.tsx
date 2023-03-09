@@ -14,36 +14,23 @@ interface User {
 }
 
 
-interface SearchBarProps {
-  rows: User[];
+
+interface Props {
+  rows: User[],
+  func: (rows: User[])=>void;
 }
 
 
-// interface MyComponentProps {
-//   setRow: React.Dispatch<React.SetStateAction<string[]>>;
-// }
-
-
-export const SearchBar = ({ rows }: SearchBarProps, {setRows}: any) => {
-
-
-
-
-
+export const SearchBar = ({rows, func}: Props) => {
 
   const [searchTerm, setSearchTerm] = useState('');
-
   const handleSearch = () => {
     const filteredUsers = rows.filter(
       user => user.email.toLowerCase().includes(searchTerm.toLowerCase())
     );
-    console.log(filteredUsers);
+    console.log(filteredUsers)
+    func(filteredUsers);
 
-
-   //?????/////
- 
-  
-    // do something with filteredUsers, e.g. display them in a list
   };
 
   return (

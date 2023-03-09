@@ -128,10 +128,14 @@ export default function CustomPaginationActionsTable() {
     setPage(0);
   };
 
+const handeRows=(rows: User[])=>{
+  setRows(rows)
+}
+
   return (
     <>
     {/* <SearchBar rows={rows} setRows={setRows}/> */}
-    <SearchBar rows={rows}/>
+    <SearchBar rows={rows} func={handeRows}/>
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
       <TableHead>
