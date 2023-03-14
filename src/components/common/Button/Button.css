@@ -1,0 +1,24 @@
+.login-btn{
+    text-transform: uppercase;
+    padding: 10px 40px;
+    background-color: #097EB2;
+    color: white;
+    border-radius: .2rem;
+    font-size: 20px;
+    line-height: 28px;
+
+    
+}
+
+.login-btn:hover{
+    background-color: #00537C;
+
+}
+
+.user-btn{
+    color: white;
+    background-color: #BB0000;
+}
+.user-btn:hover{
+    background-color: #D40000;
+}

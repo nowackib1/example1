@@ -1,18 +1,14 @@
 import React from 'react'
-import TablePaginationActions from './TablePaginationActions'
+import CustomPaginationActionsTable from './CustomPaginationActionsTable'
 import './UsersTable.css'
 
 const UsersTable = () => {
   return (
-    <>
-    <div className="table">
-   
-
-    <TablePaginationActions/>
-
-   
-    </div>
-    </>
+  <>
+  <div className="tableContener">
+  <CustomPaginationActionsTable/>
+  </div>
+  </>
   )
 }
 
