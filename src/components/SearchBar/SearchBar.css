@@ -1,3 +1,20 @@
-.szukaj {
-    padding-top: 70px;
+.searchContener{
+    display: flex;
+    padding: 16px;
+}
+
+.inputContener{
+    display: flex;
+    padding: 10px;
+    border: 1px solid var(--neutral);
+    border-radius: .4rem
+}
+
+.inputContener > input{
+    border: none
+}
+
+.searchButton{
+    border: none;
+    background-color: var(--white);
 }

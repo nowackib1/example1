@@ -1,34 +1,36 @@
 :root {
-  --white: #F5F6F8;
-  --navBar: #3A4452;
-  --black: #000000;
-}
-
-
-
-
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
- 
-}
-
-  .app{
-    font-family: 'Open Sans', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-      }
-
-
-
-
-      
   
-      .MuiSvgIcon-root {
-        color: var(--black)
-      }
+    --bcg: #F5F6F8;
+--white: #ffffff;
+    --navBar: #3A4452;
+    --black: #000000;
+    --littleGrey: #67707A;
+    --neutral: #4B5662;
 
-      
+}
+  
+  
+.App{
+
+  display: flex;
+  flex-direction: column;
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--bcg);
+  
+
+
+}
+  
+.below-navbar{
+  display: flex;
+}
+  
+  
+  
+        
+    
+.MuiSvgIcon-root {
+  color: var(--neutral)
+}
+  
+        

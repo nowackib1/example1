@@ -1,50 +1,38 @@
+import React from 'react';
 import { useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
-
-
 import "./SearchBar.css"
+import { IUser } from '../../types/IUser';
 
 
-
-interface User {
-  id: number;
-  username: string;
-  email: string;
-  action: string
+interface SearchBarProps {
+  rows: IUser[],
+  func: (rows: IUser[])=>void;
 }
 
-
-
-interface Props {
-  rows: User[],
-  func: (rows: User[])=>void;
-}
-
-
-export const SearchBar = ({rows, func}: Props) => {
-
+export const SearchBar: React.FC< SearchBarProps> = ({ rows, func}) => {
   const [searchTerm, setSearchTerm] = useState('');
   const handleSearch = () => {
-    const filteredUsers = rows.filter(
-      user => user.email.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    console.log(filteredUsers)
-    func(filteredUsers);
-
-  };
-
+  const filteredUsers = rows.filter(
+  user => user.email.toLowerCase().includes(searchTerm.toLowerCase()));
+  console.log(filteredUsers)
+  func(filteredUsers);
+}
   return (
-    <div className="szukaj">
-      <input
-        type="text"
-        placeholder="Search by email"
-        value={searchTerm}
-        onChange={e => setSearchTerm(e.target.value)}
-      />
-      <button onClick={handleSearch}>
-        <SearchIcon/>
-      </button>
-     
-    </div>
-  );
-};
+    <>
+      <div className="searchContener">
+        <div className="inputContener">
+          <input
+            type="text"
+            placeholder="Search for table"
+            value={searchTerm}
+            onChange={e => setSearchTerm(e.target.value)}
+          />
+          <button className='searchButton' onClick={handleSearch}>
+          <SearchIcon/>
+          </button>
+        </div>
+      </div>
+    </>
+  )
+}

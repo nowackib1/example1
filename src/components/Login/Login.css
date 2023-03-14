@@ -1,0 +1,39 @@
+.login-div{
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 528px;
+    height: 189px;
+    border-radius: .7rem;
+    -webkit-box-shadow: 0px 0px 20px -7px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 20px -7px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 20px -7px rgba(0, 0, 0, 1);
+   
+    
+}
+
+
+.login-div__h1{
+    padding: 24px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+} 
+
+
+.login-div__p{
+    padding-left: 24px;
+    font-size: 14px;;
+    color: #4B5662
+    
+    
+} 
+
+.login-btn{
+position: absolute;
+right: 24px;
+bottom: 35px;
+  
+}

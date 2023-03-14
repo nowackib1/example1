@@ -1,49 +1,47 @@
 .navbar{
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-    width: 1920px;
-    height: 60px;
-    left: 0px;
-    top: 0px;
-    background: var(--navBar);
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  left: 0;
+  top: 0;
+  background: var(--navBar);
 }
 
 
 
 .navbar__left{
-    display: flex;
-    align-items: center;
-    text-align: center;
-    padding-left: 10px;
-    gap: 50px;
-    color: var(--white)
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding-left: 10px;
+  gap: 50px;
+  color: var(--white)
 }
-    
-    
+  
+  
 .navbar__logo {
-    width: 55px;
-    height: 42px;
+  width: 55px;
+  height: 42px;
 } 
 
 .navbar__right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    width: 138px;
-    height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 138px;
+  height: 60px;
 }
 
 
 
 .navbar__right > .MuiSvgIcon-root{
-    color: var(--white);
+  color: var(--white);
 }
 
 
 a {
-    color: var(--white);
-    text-decoration: none;
+  color: var(--white);
+  text-decoration: none;
 }
 
